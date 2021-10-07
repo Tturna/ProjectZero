@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: bbd4d33bf082f904ab6afef020eb03d2, type: 3}
+    - {fileID: 2800000, guid: 8820820c22aad544f9cdf9f23acf4af4, type: 3}
+    - {fileID: 2800000, guid: cef6826da8958bc46ae19f8e394086d0, type: 3}
+    - {fileID: 2800000, guid: d34ae4e1b7da08b48a6a8264cd7cf62a, type: 3}
+    totalSpriteSurfaceArea: 5376
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 7819007786223611046, guid: d34ae4e1b7da08b48a6a8264cd7cf62a, type: 3}
+  - {fileID: 348030643474923323, guid: d34ae4e1b7da08b48a6a8264cd7cf62a, type: 3}
+  - {fileID: -4398250581576014155, guid: d34ae4e1b7da08b48a6a8264cd7cf62a, type: 3}
+  - {fileID: -3671289490240392035, guid: d34ae4e1b7da08b48a6a8264cd7cf62a, type: 3}
+  - {fileID: -3985966361791126326, guid: d34ae4e1b7da08b48a6a8264cd7cf62a, type: 3}
+  - {fileID: -6111938189740256928, guid: d34ae4e1b7da08b48a6a8264cd7cf62a, type: 3}
+  - {fileID: -2240677337483900966, guid: d34ae4e1b7da08b48a6a8264cd7cf62a, type: 3}
+  - {fileID: -869359486001500068, guid: d34ae4e1b7da08b48a6a8264cd7cf62a, type: 3}
+  - {fileID: 1594001960838098517, guid: bbd4d33bf082f904ab6afef020eb03d2, type: 3}
+  - {fileID: -7807868865700218163, guid: bbd4d33bf082f904ab6afef020eb03d2, type: 3}
+  - {fileID: 3870999303628252234, guid: bbd4d33bf082f904ab6afef020eb03d2, type: 3}
+  - {fileID: 6517331753619154239, guid: bbd4d33bf082f904ab6afef020eb03d2, type: 3}
+  - {fileID: 7387251466519246385, guid: 8820820c22aad544f9cdf9f23acf4af4, type: 3}
+  - {fileID: -7138862168428861761, guid: 8820820c22aad544f9cdf9f23acf4af4, type: 3}
+  - {fileID: 2374086575966204038, guid: 8820820c22aad544f9cdf9f23acf4af4, type: 3}
+  - {fileID: -4450873287122536838, guid: 8820820c22aad544f9cdf9f23acf4af4, type: 3}
+  - {fileID: 4520463628532377241, guid: cef6826da8958bc46ae19f8e394086d0, type: 3}
+  - {fileID: 8144617181408535577, guid: cef6826da8958bc46ae19f8e394086d0, type: 3}
+  - {fileID: 891464545552733839, guid: cef6826da8958bc46ae19f8e394086d0, type: 3}
+  - {fileID: 8169848652261781336, guid: cef6826da8958bc46ae19f8e394086d0, type: 3}
+  - {fileID: 804435325934101444, guid: cef6826da8958bc46ae19f8e394086d0, type: 3}
+  - {fileID: -6450012836095048123, guid: cef6826da8958bc46ae19f8e394086d0, type: 3}
+  - {fileID: 1210042656010148466, guid: cef6826da8958bc46ae19f8e394086d0, type: 3}
+  - {fileID: 3682685430768868480, guid: cef6826da8958bc46ae19f8e394086d0, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - PlayerWalkR_2
+  - PlayerWalkR_3
+  - PlayerWalkR_0
+  - PlayerWalkR_1
+  - PlayerWalkR_6
+  - PlayerWalkR_7
+  - PlayerWalkR_4
+  - PlayerWalkR_5
+  - PlayerIdleL_3
+  - PlayerIdleL_2
+  - PlayerIdleL_1
+  - PlayerIdleL_0
+  - PlayerIdleR_1
+  - PlayerIdleR_0
+  - PlayerIdleR_3
+  - PlayerIdleR_2
+  - PlayerWalkL_0
+  - PlayerWalkL_1
+  - PlayerWalkL_2
+  - PlayerWalkL_3
+  - PlayerWalkL_4
+  - PlayerWalkL_5
+  - PlayerWalkL_6
+  - PlayerWalkL_7
+  m_RenderDataMap: {}
+  m_Tag: PlayerAtlas
+  m_IsVariant: 0
