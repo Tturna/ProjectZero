@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 59803219}
   - component: {fileID: 59803218}
   m_Layer: 5
-  m_Name: Text
+  m_Name: EXPERIMENTAL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,7 +158,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -87.57}
-  m_SizeDelta: {x: 437.42, y: 79.1}
+  m_SizeDelta: {x: 721.9, y: 79.1}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &59803218
 MonoBehaviour:
@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: EXPERIMENTAL
+  m_Text: EXPERIMENTAL BRANCH
 --- !u!222 &59803219
 CanvasRenderer:
   m_ObjectHideFlags: 0
