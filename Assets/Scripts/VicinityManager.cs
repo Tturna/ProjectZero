@@ -64,7 +64,7 @@ public class VicinityManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Entered " + collision.name);
+        //Debug.Log("Entered " + collision.name);
         OnEnterNearObjectTrigger(collision.gameObject);
 
         if (collision.gameObject.tag == "Enemy")
@@ -79,7 +79,7 @@ public class VicinityManager : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Exited " + collision.name);
+        //Debug.Log("Exited " + collision.name);
         OnExitNearObjectTrigger(collision.gameObject);
 
         if (collision.gameObject.tag == "Enemy")

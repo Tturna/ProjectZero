@@ -116,7 +116,7 @@ public class Weapon : MonoBehaviour
 
         // Calculate projectile lifetime
         float lifeTime = shotLength / currentWeapon.weaponSO.projectileSpeed;
-        Debug.Log(string.Format("{0} / {1} = {2}",shotLength, currentWeapon.weaponSO.projectileSpeed, lifeTime));
+        //Debug.Log(string.Format("{0} / {1} = {2}",shotLength, currentWeapon.weaponSO.projectileSpeed, lifeTime));
 
         projectileSettings.Initialize(currentWeapon.weaponSO.projectileSpeed, lifeTime);
     }
