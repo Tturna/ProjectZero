@@ -7,7 +7,8 @@ public class HUD : MonoBehaviour
     [SerializeField] private Image healthBar;
     [SerializeField] private Text currency;
     [SerializeField] private Text ammo;
-    [SerializeField] private Image[] weapons;
+    [SerializeField] private Image[] weaponSlots;
+    [SerializeField, Tooltip("Weapon Images")] private Image[] weapons;
 
     private Color inactiveGunColor = new Color(1f, 1f, 1f, .5f);
     private Color activeGunColor = Color.white;
@@ -32,12 +33,16 @@ public class HUD : MonoBehaviour
         ammo.text = string.Format("{0} / {1}", weaponAmmo, reserveAmmo);
     }
 
+    // Set color of weapon with given index to white and the other one to transparent
+    // Also update weapon rect positions to be in the middle of the weapon slot
     public void UpdateSelectedWeaponUI(int index)
     {
         for (int i = 0; i < weapons.Length; i++)
         {
             if (i == index) weapons[i].color = activeGunColor;
             else weapons[i].color = inactiveGunColor;
+
+            weapons[i].rectTransform.anchoredPosition = weaponSlots[i].rectTransform.anchoredPosition;
         }
     }
 }
