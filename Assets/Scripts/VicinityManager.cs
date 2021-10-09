@@ -57,6 +57,7 @@ public class VicinityManager : MonoBehaviour
 
     void Start()
     {
+        // Create a cirlce collider as a trigger to check for close objects
         vicinityTrigger = gameObject.AddComponent<CircleCollider2D>();
         vicinityTrigger.isTrigger = true;
         vicinityTrigger.radius = interactRange;

@@ -6,6 +6,9 @@ public class Door : MonoBehaviour
 {
     private bool canOpen;
     [SerializeField] private bool isOpen;
+    [SerializeField] private int openCost;
+
+    Player player;
 
     private void Start()
     {
@@ -26,6 +29,13 @@ public class Door : MonoBehaviour
 
     public void OpenDoor()
     {
+        // Check if the player has sufficient currency
+        // If so, remove currency from the player
+        if (!player) player = FindObjectOfType<Player>();
+
+        if (player.currency >= openCost) player.AddCurrency(-openCost);
+        else return;
+
         isOpen = true;
         gameObject.name = string.Format("Door ({0})", isOpen ? "Open" : "Closed");
         GetComponent<BoxCollider2D>().enabled = false;

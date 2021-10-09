@@ -99,7 +99,7 @@ public class Weapon : MonoBehaviour
             if (hit.transform.tag == "Enemy")
             {
                 // Damage the enemy
-                hit.transform.GetComponent<Enemy>().ReceiveDamage(currentWeapon.weaponSO.damage, gameObject);
+                hit.transform.GetComponent<Enemy>().ReceiveDamage(currentWeapon.weaponSO.damage, transform.root.gameObject);
             }
         }
         else
