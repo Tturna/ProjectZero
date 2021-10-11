@@ -9,9 +9,13 @@ public class Door : MonoBehaviour
     [SerializeField] private int openCost;
 
     Player player;
+    MeshRenderer promptRenderer;
 
     private void Start()
     {
+        promptRenderer = GetComponentInChildren<MeshRenderer>();
+        promptRenderer.enabled = false;
+
         VicinityManager vm = FindObjectOfType<VicinityManager>();
         vm.OnEnterNearDoor += OnEnterNearDoor;
         vm.OnExitNearDoor += OnExitNearDoor;
@@ -39,15 +43,21 @@ public class Door : MonoBehaviour
         isOpen = true;
         gameObject.name = string.Format("Door ({0})", isOpen ? "Open" : "Closed");
         GetComponent<BoxCollider2D>().enabled = false;
+        promptRenderer.enabled = false;
     }
 
     void OnEnterNearDoor(GameObject door)
     {
         canOpen = true;
+        if (!isOpen)
+        {
+            promptRenderer.enabled = true;
+        }
     }
 
     void OnExitNearDoor(GameObject door)
     {
         canOpen = false;
+        promptRenderer.enabled = false;
     }
 }

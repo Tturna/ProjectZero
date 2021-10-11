@@ -11,5 +11,6 @@ public class WeaponScriptableObject : ScriptableObject
     public Vector2 muzzlePoint;
     public Sprite sprite;
     public GameObject projectilePrefab;
+    public AnimatorOverrideController animationController;
     public AudioClip attackSound;
 }

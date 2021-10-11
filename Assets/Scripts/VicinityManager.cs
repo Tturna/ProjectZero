@@ -11,20 +11,26 @@ public class VicinityManager : MonoBehaviour
     public delegate void OnEnterNearObjectHandler(GameObject target);
     public delegate void OnEnterNearEnemyHandler(GameObject enemy);
     public delegate void OnEnterNearDoorHandler(GameObject door);
+    public delegate void OnEnterNearLockerHandler(GameObject locker);
 
     public delegate void OnExitNearObjectHandler(GameObject target);
     public delegate void OnExitNearEnemyHandler(GameObject enemy);
     public delegate void OnExitNearDoorHandler(GameObject door);
+    public delegate void OnExitNearLockerHandler(GameObject locker);
 
     public event OnEnterNearObjectHandler OnEnterNearObject;
     public event OnEnterNearEnemyHandler OnEnterNearEnemy;
     public event OnEnterNearDoorHandler OnEnterNearDoor;
+    public event OnEnterNearLockerHandler OnEnterNearLocker;
 
     public event OnExitNearObjectHandler OnExitNearObject;
     public event OnExitNearEnemyHandler OnExitNearEnemy;
     public event OnExitNearDoorHandler OnExitNearDoor;
+    public event OnExitNearLockerHandler OnExitNearLocker;
 
-    // Event triggers
+    #region Event Triggers
+
+    // Enter
     protected virtual void OnEnterNearObjectTrigger(GameObject target)
     {
         OnEnterNearObject?.Invoke(target);
@@ -40,6 +46,13 @@ public class VicinityManager : MonoBehaviour
         OnEnterNearDoor?.Invoke(door);
     }
 
+    protected virtual void OnEnterNearLockerTrigger(GameObject locker)
+    {
+        OnEnterNearLocker?.Invoke(locker);
+    }
+
+    // Exit
+
     protected virtual void OnExitNearObjectTrigger(GameObject target)
     {
         OnExitNearObject?.Invoke(target);
@@ -54,6 +67,13 @@ public class VicinityManager : MonoBehaviour
     {
         OnExitNearDoor?.Invoke(door);
     }
+
+    protected virtual void OnExitNearLockerTrigger(GameObject locker)
+    {
+        OnExitNearLocker?.Invoke(locker);
+    }
+
+    #endregion
 
     void Start()
     {
@@ -76,6 +96,10 @@ public class VicinityManager : MonoBehaviour
         {
             OnEnterNearDoorTrigger(collision.gameObject);
         }
+        else if (collision.gameObject.tag == "Locker")
+        {
+            OnEnterNearLockerTrigger(collision.gameObject);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -90,6 +114,10 @@ public class VicinityManager : MonoBehaviour
         else if (collision.gameObject.tag == "Door")
         {
             OnExitNearDoorTrigger(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "Locker")
+        {
+            OnExitNearLockerTrigger(collision.gameObject);
         }
     }
 }
