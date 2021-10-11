@@ -1,5 +1,6 @@
-using System.Collections.Generic;
+using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine;
+using System.Collections;
 
 public class Weapon : MonoBehaviour
 {
@@ -123,10 +124,30 @@ public class Weapon : MonoBehaviour
         // Reduce ammo and update the ammo UI
         ReduceWeaponAmmo(1);
 
-        // Instantiate and initialize a projectile prefab for VFX
+        // Instantiate and initialize a projectile prefab and a muzzle flash prefab for VFX
         GameObject projectile = Instantiate(so.projectilePrefab, (Vector2)transform.position, transform.parent.rotation);
+        GameObject muzzleFlash = Instantiate(so.muzzleFlashPrefab, (Vector2)transform.position, transform.parent.rotation);
+
+        // Projectile position to muzzle point
         projectile.transform.localPosition += Vector3.up * so.muzzlePoint.y;
         projectile.transform.Translate(Vector3.right * so.muzzlePoint.x, Space.Self);
+
+        // Muzzle flash position to muzzle point
+        muzzleFlash.transform.localPosition += Vector3.up * so.muzzlePoint.y;
+        muzzleFlash.transform.Translate(Vector3.right * so.muzzlePoint.x, Space.Self);
+        muzzleFlash.transform.SetParent(transform);
+
+        // Projectile colors
+        projectile.GetComponent<SpriteRenderer>().color = so.projectileColor;
+        projectile.GetComponentInChildren<Light2D>().color = so.projectileColor;
+
+        // Muzzle flash color
+        muzzleFlash.GetComponent<SpriteRenderer>().color = so.muzzleFlashColor;
+        muzzleFlash.GetComponent<Light2D>().color = so.projectileColor;
+
+        // Destroy muzzle flash after given time
+        StartCoroutine(DelayDestroyObject(muzzleFlash, so.muzzleFlashLifetime));
+
         Projectile projectileSettings = projectile.GetComponent<Projectile>();
 
         // Calculate projectile lifetime
@@ -140,4 +161,10 @@ public class Weapon : MonoBehaviour
     }
 
     public int GetSelectedSlotIndex() { return selectedSlotIdx; }
+
+    private IEnumerator DelayDestroyObject(GameObject target, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(target);
+    }
 }

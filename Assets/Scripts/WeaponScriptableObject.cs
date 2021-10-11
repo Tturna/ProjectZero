@@ -8,9 +8,13 @@ public class WeaponScriptableObject : ScriptableObject
     public int ammoCapacity;
     public int defaultReserveAmmo;
     public float projectileSpeed;
+    public float muzzleFlashLifetime;
     public Vector2 muzzlePoint;
     public Sprite sprite;
     public GameObject projectilePrefab;
+    public GameObject muzzleFlashPrefab;
+    public Color projectileColor;
+    public Color muzzleFlashColor;
     public AnimatorOverrideController animationController;
     public AudioClip attackSound;
 }

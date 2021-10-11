@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     private Camera mainCamera;
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private GameObject runParticlesPrefab;
     
     private HUD hud;
     private Stats stats;
@@ -32,9 +33,11 @@ public class Player : MonoBehaviour
     // Movement & Aiming
     private Rigidbody2D playerBody;
     private Vector2 moveDir;
+    private GameObject runParticles;
     private bool sprinting;
     private bool lookingLeft;
     private bool regeneratingStamina;
+    private bool playingParticles;
 
     void Start()
     {
@@ -168,6 +171,20 @@ public class Player : MonoBehaviour
             }
 
             playerBody.AddForce(moveDir.normalized * stats.movementSpeed * multiplier);
+
+            // Running particles
+            if (!playingParticles)
+            {
+                runParticles = Instantiate(runParticlesPrefab, transform.position + Vector3.down * 0.5f, Quaternion.identity, transform);
+                playingParticles = true;
+            }
+        }
+        // Stop running particles when not moving
+        else if (playingParticles)
+        {
+            runParticles.transform.SetParent(null);
+            StartCoroutine(DelayDestroyObject(runParticles, 0.5f));
+            playingParticles = false;
         }
 
         #region Updating Statistics (Health & Stamina regen...)
@@ -194,17 +211,16 @@ public class Player : MonoBehaviour
         #endregion
     }
 
-    // Temp coroutine for monitoring
-    IEnumerator DeactivateGunRay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        gunRay.enabled = false;
-    }
-
     IEnumerator StartStaminaRegeneration(float delay)
     {
         yield return new WaitForSeconds(delay);
         regeneratingStamina = true;
+    }
+
+    IEnumerator DelayDestroyObject(GameObject target, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(target);
     }
 
     public void ReceiveDamage(float amount)
