@@ -16,8 +16,9 @@ MonoBehaviour:
   damage: 25
   ammoCapacity: 30
   defaultReserveAmmo: 120
-  projectileSpeed: 140
-  muzzlePoint: {x: 0, y: 0}
-  sprite: {fileID: 21300000, guid: 489e52ac4df464a4181d66cb1e0e2fcb, type: 3}
+  projectileSpeed: 100
+  muzzlePoint: {x: 0.85, y: 0.05}
+  sprite: {fileID: 675874028361584279, guid: 9628c316df5b54341822574063a5d2f8, type: 3}
   projectilePrefab: {fileID: 4623133005855197690, guid: 266a4a2a56f08d0449107e8aa748765b, type: 3}
+  animationController: {fileID: 22100000, guid: ea537b9e2bbae5f4c80d0af3cbe0499a, type: 2}
   attackSound: {fileID: 0}

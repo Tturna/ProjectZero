@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -12,6 +13,7 @@ public class Weapon : MonoBehaviour
 
     // General
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
     // Weapons
     [SerializeField] private WeaponScriptableObject[] weapons;
@@ -21,10 +23,14 @@ public class Weapon : MonoBehaviour
     // Slot selection
     private int selectedSlotIdx;
 
+    // Monitoring
+    [SerializeField] private bool showDebug;
+
     void Awake()
     {
         // Define variables
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
 
         for (int i = 0; i < weapons.Length; i++)
         {
@@ -47,6 +53,9 @@ public class Weapon : MonoBehaviour
 
         // Change weapon sprite
         spriteRenderer.sprite = currentWeapon.weaponSO.sprite;
+
+        // Change weapon animations
+        if (currentWeapon.weaponSO.animationController) animator.runtimeAnimatorController = currentWeapon.weaponSO.animationController;
     }
 
     // Select a given slot
@@ -82,7 +91,9 @@ public class Weapon : MonoBehaviour
         // Check if out of ammo
         if (currentWeapon.weaponAmmo <= 0) return;
 
-        Vector2 startPoint = (Vector2)transform.position + currentWeapon.weaponSO.muzzlePoint;
+        WeaponScriptableObject so = currentWeapon.weaponSO;
+
+        Vector2 startPoint = (Vector2)transform.position + so.muzzlePoint;
 
         // Raycast from the weapon position towards the target (until infinity?) to find collisions
         RaycastHit2D hit = Physics2D.Raycast(startPoint, target - startPoint);
@@ -92,6 +103,8 @@ public class Weapon : MonoBehaviour
         float shotLength = 50f;
         if (hit)
         {
+            if (showDebug) Debug.Log("Hit: " + hit.collider.gameObject.name);
+
             hitPoint = hit.point;
             shotLength = (hitPoint - startPoint).magnitude;
 
@@ -99,7 +112,7 @@ public class Weapon : MonoBehaviour
             if (hit.transform.tag == "Enemy")
             {
                 // Damage the enemy
-                hit.transform.GetComponent<Enemy>().ReceiveDamage(currentWeapon.weaponSO.damage, transform.root.gameObject);
+                hit.transform.GetComponent<Enemy>().ReceiveDamage(so.damage, transform.root.gameObject);
             }
         }
         else
@@ -111,14 +124,19 @@ public class Weapon : MonoBehaviour
         ReduceWeaponAmmo(1);
 
         // Instantiate and initialize a projectile prefab for VFX
-        GameObject projectile = Instantiate(currentWeapon.weaponSO.projectilePrefab, (Vector2)transform.position + currentWeapon.weaponSO.muzzlePoint, transform.parent.rotation);
+        GameObject projectile = Instantiate(so.projectilePrefab, (Vector2)transform.position, transform.parent.rotation);
+        projectile.transform.localPosition += Vector3.up * so.muzzlePoint.y;
+        projectile.transform.Translate(Vector3.right * so.muzzlePoint.x, Space.Self);
         Projectile projectileSettings = projectile.GetComponent<Projectile>();
 
         // Calculate projectile lifetime
-        float lifeTime = shotLength / currentWeapon.weaponSO.projectileSpeed;
+        float lifeTime = shotLength / so.projectileSpeed;
         //Debug.Log(string.Format("{0} / {1} = {2}",shotLength, currentWeapon.weaponSO.projectileSpeed, lifeTime));
 
-        projectileSettings.Initialize(currentWeapon.weaponSO.projectileSpeed, lifeTime);
+        projectileSettings.Initialize(so.projectileSpeed, lifeTime);
+
+        // Play weapon animation
+        animator.SetTrigger("attack");
     }
 
     public int GetSelectedSlotIndex() { return selectedSlotIdx; }
