@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     // General
     private Stats stats;
     private SpriteRenderer spriteRenderer;
+    private Player player;
 
     // Specific stats
     [SerializeField] private int scorePrize; // How much points the player gets from this enemy
@@ -21,6 +22,10 @@ public class Enemy : MonoBehaviour
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         stats = new Stats(100f, 100f, 1000f, 100f, 100f, 10f, 1f);
+        player = FindObjectOfType<Player>();
+
+        // Set pathfinding target
+        GetComponent<Pathfinding.AIDestinationSetter>().target = player.transform;
     }
 
     private void Update()

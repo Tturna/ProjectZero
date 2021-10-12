@@ -5,6 +5,7 @@ using UnityEngine;
 public class DevMenu : MonoBehaviour
 {
     [SerializeField] GameObject menu;
+    [SerializeField] GameObject enemy;
 
     bool isOpen;
 
@@ -20,5 +21,10 @@ public class DevMenu : MonoBehaviour
     {
         isOpen = !isOpen;
         menu.SetActive(isOpen);
+    }
+
+    public void SpawnEnemy()
+    {
+        Instantiate(enemy);
     }
 }
