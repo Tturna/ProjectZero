@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class DevMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameObject menu;
 
-    // Update is called once per frame
+    bool isOpen;
+
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            SwitchMenu();
+        }
+    }
+
+    void SwitchMenu()
+    {
+        isOpen = !isOpen;
+        menu.SetActive(isOpen);
     }
 }
