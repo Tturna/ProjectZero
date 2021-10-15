@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     private Stats stats;
     private SpriteRenderer spriteRenderer;
     private Player player;
+    private EnemySpawner enemySpawner;
 
     // Specific stats
     [SerializeField] private int scorePrize; // How much points the player gets from this enemy
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        enemySpawner = FindObjectOfType<EnemySpawner>();
         stats = new Stats(100f, 100f, 1000f, 100f, 100f, 10f, 1f);
         player = FindObjectOfType<Player>();
 
@@ -59,6 +61,7 @@ public class Enemy : MonoBehaviour
             }
 
             // deth
+            enemySpawner.AddTally();
             Destroy(gameObject);
         }
     }

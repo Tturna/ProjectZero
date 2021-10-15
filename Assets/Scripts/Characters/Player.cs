@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField, Tooltip("Energy regeneration amount per FIXED frame")] private float staminaRegenAmount;
 
     public int currency;
+    public string currentMapZone;
 
     // General
     private Camera mainCamera;
@@ -249,5 +250,14 @@ public class Player : MonoBehaviour
     private void Death()
     {
         Debug.Log("Death");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // If the player enters a zone, update current zone
+        if (collision.gameObject.tag == "Zone")
+        {
+            currentMapZone = collision.gameObject.name.Substring(5);
+        }
     }
 }
