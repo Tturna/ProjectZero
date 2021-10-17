@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField, Tooltip("Energy regeneration amount per FIXED frame")] private float staminaRegenAmount;
 
     public int currency;
-    public string currentMapZone;
+    public int currentMapZone;
 
     // General
     private Camera mainCamera;
@@ -257,7 +257,7 @@ public class Player : MonoBehaviour
         // If the player enters a zone, update current zone
         if (collision.gameObject.tag == "Zone")
         {
-            currentMapZone = collision.gameObject.name.Substring(5);
+            currentMapZone = collision.gameObject.GetComponent<MapZone>().zoneIndex;
         }
     }
 }

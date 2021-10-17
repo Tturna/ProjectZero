@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawnPoint : MonoBehaviour
 {
     public float adjacencyRange;
-    public string mapZone;
+    public int mapZone;
 
     // Spawn enemy
     // Call nearby spawners to also spawn an enemy

@@ -51,7 +51,35 @@ public class EnemySpawner : MonoBehaviour
                 // Spawn enemies in the current zone and adjacent ones.
                 if (es.mapZone == player.currentMapZone)
                 {
-                    i += es.SpawnEnemy(enemyPrefabs[1]) - 1;
+                    // Choose enemy type
+                    // Array order determines chance of selection
+                    int idx = 0;
+                    if (enemiesPerWave.Length > 1)
+                    {
+                        float[] r = new float[enemiesPerWave.Length];
+                        r[0] = 60;
+                        r[1] = 40;
+
+                        // Random 0-100
+                        float roll = Random.Range(0, 100);
+
+                        for (int n = 0; n < r.Length; n++)
+                        {
+                            if (n > 0) r[n] = r[n] / 2;
+
+                            // Calculate selection
+                            roll -= r[n];
+                            if (roll <= 0)
+                            {
+                                idx = n;
+                                break;
+                            }
+
+                            if (n + 1 < r.Length - 1) r[n + 1] = r[n];
+                        }
+                    }
+
+                    i += es.SpawnEnemy(enemyPrefabs[idx]) - 1;
                 }
                 Debug.Log(i);
             }

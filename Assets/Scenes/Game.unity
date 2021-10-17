@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2584229933264072374, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: mapZone
-      value: Zone1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2584229933264072375, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: m_RootOrder
@@ -569,6 +569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 236641032}
   - component: {fileID: 236641031}
+  - component: {fileID: 236641033}
   m_Layer: 2
   m_Name: zone_Zone1
   m_TagString: Zone
@@ -616,6 +617,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &236641033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236641030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d1bc3de44bef547921cb8d4ccf5460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneIndex: 0
 --- !u!1 &314471450
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,7 +2274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2584229933264072374, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: mapZone
-      value: Zone1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2584229933264072375, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: m_RootOrder
@@ -2685,7 +2699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2584229933264072374, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: mapZone
-      value: Zone1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2584229933264072375, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: m_RootOrder
@@ -3817,7 +3831,7 @@ MonoBehaviour:
   staminaRegenDelay: 2
   staminaRegenAmount: 0.25
   currency: 0
-  currentMapZone: 
+  currentMapZone: 0
   animator: {fileID: 1429976900}
   spriteRenderer: {fileID: 1429976899}
   runParticlesPrefab: {fileID: 568571566281539103, guid: ec3c37658af5299418571616d5cd53cc, type: 3}
@@ -4348,7 +4362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2584229933264072374, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: mapZone
-      value: Zone1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2584229933264072375, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: m_RootOrder
