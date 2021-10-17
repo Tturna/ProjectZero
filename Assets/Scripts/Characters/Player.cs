@@ -48,10 +48,6 @@ public class Player : MonoBehaviour
         playerBody = GetComponent<Rigidbody2D>();
         weapon = GetComponentInChildren<Weapon>();
         weaponRenderer = weaponObject.GetComponentInChildren<SpriteRenderer>();
-
-        // Update ammo and weapon UI
-        hud.UpdateAmmoUI(weapon?.currentWeapon?.weaponAmmo ?? 0, weapon?.currentWeapon?.reserveAmmo ?? 0);
-        hud.UpdateWeaponUIPositions();
     }
 
     void Update()

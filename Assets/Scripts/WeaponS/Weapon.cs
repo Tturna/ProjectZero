@@ -51,7 +51,7 @@ public class Weapon : MonoBehaviour
             // Put an empty weapon into each weapon slot
             weaponStats[i] = new WeaponStats();
 
-            // Update weapon HUD for each
+            // Set each weapon slot to invisible at first
             hud.UpdateWeaponUI(i, null);
 
             // Populate data for weapons the player starts with
@@ -59,10 +59,17 @@ public class Weapon : MonoBehaviour
             weaponStats[i].weaponSO = weapons[i];
             weaponStats[i].weaponAmmo = weapons[i].ammoCapacity;
             weaponStats[i].reserveAmmo = weapons[i].defaultReserveAmmo;
+
+            // Update each carried weapon's slot's HUD
+            hud.UpdateWeaponUI(i, weaponStats[i].weaponSO.sprite);
         }
 
         // Put a gun in the player's hand when starting
         UpdateSelectedWeapon();
+
+        // Update ammo and weapon UI
+        hud.UpdateAmmoUI(currentWeapon?.weaponAmmo ?? 0, currentWeapon?.reserveAmmo ?? 0);
+        hud.UpdateWeaponUIPositions();
     }
 
     private void Update()
@@ -139,6 +146,7 @@ public class Weapon : MonoBehaviour
 
         // If no empty slot is found, replace the current weapon
         weaponStats[selectedSlotIdx] = weapon;
+        hud.UpdateWeaponUIPositions();
         UpdateSelectedWeapon();
     }
 
