@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
     // Weapon
     [SerializeField] private Transform weaponAnchor;
     [SerializeField] private GameObject weaponObject;
-    [SerializeField] private LineRenderer gunRay;
     private SpriteRenderer weaponRenderer;
     private Weapon weapon;
     
@@ -83,6 +82,7 @@ public class Player : MonoBehaviour
 
         #endregion Movement Controls
 
+        // TODO: Have the weapon stuff in the Weapon class for modularity??
         #region Shooting, aiming and reloading
 
         // Mouse position
@@ -115,30 +115,6 @@ public class Player : MonoBehaviour
         {
             // Reload
             weapon.ReloadCurrentWeapon();
-            hud.UpdateAmmoUI(weapon.currentWeapon.weaponAmmo, weapon.currentWeapon.reserveAmmo);
-        }
-
-        #endregion
-
-        #region Weapon Swapping
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            weapon.SelectSlot(0);
-            hud.UpdateSelectedWeaponUI(weapon.GetSelectedSlotIndex());
-            hud.UpdateAmmoUI(weapon.currentWeapon.weaponAmmo, weapon.currentWeapon.reserveAmmo);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            weapon.SelectSlot(1);
-            hud.UpdateSelectedWeaponUI(weapon.GetSelectedSlotIndex());
-            hud.UpdateAmmoUI(weapon.currentWeapon.weaponAmmo, weapon.currentWeapon.reserveAmmo);
-        }
-
-        if (Input.mouseScrollDelta.y != 0f)
-        {
-            weapon.SwapSlot();
-            hud.UpdateSelectedWeaponUI(weapon.GetSelectedSlotIndex());
             hud.UpdateAmmoUI(weapon.currentWeapon.weaponAmmo, weapon.currentWeapon.reserveAmmo);
         }
 

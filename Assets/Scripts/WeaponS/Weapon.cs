@@ -1,3 +1,5 @@
+// Weapon logic
+
 using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine;
 using System.Collections;
@@ -10,11 +12,21 @@ public class Weapon : MonoBehaviour
         public WeaponScriptableObject weaponSO;
         public int weaponAmmo;
         public int reserveAmmo;
+
+        public WeaponStats() { }
+
+        public WeaponStats(WeaponScriptableObject weaponSO, int weaponAmmo, int reserveAmmo)
+        {
+            this.weaponSO = weaponSO;
+            this.weaponAmmo = weaponAmmo;
+            this.reserveAmmo = reserveAmmo;
+        }
     }
 
     // General
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private HUD hud;
 
     // Weapons
     [SerializeField] private WeaponScriptableObject[] weapons;
@@ -32,11 +44,17 @@ public class Weapon : MonoBehaviour
         // Define variables
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
+        hud = FindObjectOfType<HUD>();
 
         for (int i = 0; i < weapons.Length; i++)
         {
+            // Put an empty weapon into each weapon slot
             weaponStats[i] = new WeaponStats();
 
+            // Update weapon HUD for each
+            hud.UpdateWeaponUI(i, null);
+
+            // Populate data for weapons the player starts with
             if (!weapons[i]) continue;
             weaponStats[i].weaponSO = weapons[i];
             weaponStats[i].weaponAmmo = weapons[i].ammoCapacity;
@@ -45,6 +63,24 @@ public class Weapon : MonoBehaviour
 
         // Put a gun in the player's hand when starting
         UpdateSelectedWeapon();
+    }
+
+    private void Update()
+    {
+        // Weapon swapping
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SelectSlot(0);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SelectSlot(1);
+        }
+
+        if (Input.mouseScrollDelta.y != 0f)
+        {
+            SwapSlot();
+        }
     }
 
     // Update statistics and visuals when for the selected weapon
@@ -57,6 +93,11 @@ public class Weapon : MonoBehaviour
 
         // Change weapon animations
         if (currentWeapon.weaponSO.animationController) animator.runtimeAnimatorController = currentWeapon.weaponSO.animationController;
+
+        // Update relevant HUD elements
+        hud.UpdateWeaponUI(selectedSlotIdx, weaponStats[selectedSlotIdx].weaponSO.sprite);
+        hud.UpdateSelectedWeaponUI(selectedSlotIdx);
+        hud.UpdateAmmoUI(currentWeapon.weaponAmmo, currentWeapon.reserveAmmo);
     }
 
     // Select a given slot
@@ -70,6 +111,34 @@ public class Weapon : MonoBehaviour
     public void SwapSlot()
     {
         selectedSlotIdx = selectedSlotIdx == 0 ? 1 : 0;
+
+        // Prevent swapping if there is no other weapon
+        if (weaponStats[selectedSlotIdx].weaponSO == null)
+        {
+            selectedSlotIdx = selectedSlotIdx == 0 ? 1 : 0;
+            return;
+        }
+
+        UpdateSelectedWeapon();
+    }
+
+    // Give the player a weapon.
+    // Add it to a free slot. If there is not free slot, replace the current weapon
+    public void AddWeapon(WeaponStats weapon)
+    {
+        // Check if there is an empty slot and if so, place the weapon there
+        for (int i = 0; i < weaponStats.Length; i++)
+        {
+            if (weaponStats[i].weaponSO == null)
+            {
+                weaponStats[i] = weapon;
+                hud.UpdateWeaponUI(i, weaponStats[i].weaponSO.sprite);
+                return;
+            }
+        }
+
+        // If no empty slot is found, replace the current weapon
+        weaponStats[selectedSlotIdx] = weapon;
         UpdateSelectedWeapon();
     }
 
@@ -159,8 +228,6 @@ public class Weapon : MonoBehaviour
         // Play weapon animation
         animator.SetTrigger("attack");
     }
-
-    public int GetSelectedSlotIndex() { return selectedSlotIdx; }
 
     private IEnumerator DelayDestroyObject(GameObject target, float delay)
     {

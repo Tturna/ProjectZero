@@ -48,13 +48,20 @@ public class HUD : MonoBehaviour
         }
     }
 
-    // Set color of weapon with given index to white and the other one to transparent
+    // Update slot with given index with given sprite. If the sprite is null, the image will become transparent
+    public void UpdateWeaponUI(int index, Sprite sprite)
+    {
+        weapons[index].sprite = sprite;
+        weapons[index].color = sprite == null ? Color.clear : inactiveGunColor;
+    }
+
+    // Set color of weapon with given index to white and the other one to 50% transparency
     public void UpdateSelectedWeaponUI(int index)
     {
         for (int i = 0; i < weapons.Length; i++)
         {
             if (i == index) weapons[i].color = activeGunColor;
-            else weapons[i].color = inactiveGunColor;
+            else if (weapons[i].sprite) weapons[i].color = inactiveGunColor;
         }
     }
 }
