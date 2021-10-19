@@ -53,8 +53,10 @@ public class Gunlocker : MonoBehaviour
         // Check if the player has a key
         if (!player) player = FindObjectOfType<Player>();
 
-        // Check if player has key
-
+        if (player.lockerKeys > 0) player.lockerKeys--;
+        else return; // TODO: Indication that the player has no keys
+        
+        // Open locker
         isOpen = true;
         gameObject.name = string.Format("Gun Locker ({0})", isOpen ? "Open" : "Closed");
         GetComponent<Animator>().SetTrigger("open");

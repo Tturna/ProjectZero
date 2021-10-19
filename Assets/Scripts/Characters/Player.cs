@@ -11,12 +11,12 @@ public class Player : MonoBehaviour
     [SerializeField, Tooltip("Energy regeneration amount per FIXED frame")] private float staminaRegenAmount;
 
     public int currency;
+    public int lockerKeys;
     public int currentMapZone;
 
     // General
     private Camera mainCamera;
     [SerializeField] private Animator animator;
-    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private GameObject runParticlesPrefab;
     
     private HUD hud;
