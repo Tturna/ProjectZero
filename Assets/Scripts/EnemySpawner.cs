@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] int threatLevel;
     [SerializeField] float roundGap;
+    [SerializeField] float enemySpawnGap;
     [SerializeField] int[] enemiesPerWave;
 
     // Store all spawn points
@@ -17,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     Player player;
     float timer;
     bool roundActive;
-    bool enemiesSpawned;
+    bool haveEnemiesSpawned;
     int enemiesKilled;
 
     void Start()
@@ -42,49 +43,10 @@ public class EnemySpawner : MonoBehaviour
             }
         }
         // Handle enemy spawning while a round is active
-        else if (!enemiesSpawned)
+        else if (!haveEnemiesSpawned)
         {
-            for (int i = 0; i < enemiesPerWave[Mathf.Clamp(threatLevel - 1, 0, enemiesPerWave.Length)]; i++)
-            {
-                EnemySpawnPoint es = spawnPoints[i % spawnPoints.Length];
-
-                // Spawn enemies in the current zone and adjacent ones.
-                if (es.mapZone == player.currentMapZone)
-                {
-                    // Choose enemy type
-                    // Array order determines chance of selection
-                    int idx = 0;
-                    if (enemiesPerWave.Length > 1)
-                    {
-                        float[] r = new float[enemiesPerWave.Length];
-                        r[0] = 60;
-                        r[1] = 40;
-
-                        // Random 0-100
-                        float roll = Random.Range(0, 100);
-
-                        for (int n = 0; n < r.Length; n++)
-                        {
-                            if (n > 0) r[n] = r[n] / 2;
-
-                            // Calculate selection
-                            roll -= r[n];
-                            if (roll <= 0)
-                            {
-                                idx = n;
-                                break;
-                            }
-
-                            if (n + 1 < r.Length - 1) r[n + 1] = r[n];
-                        }
-                    }
-
-                    i += es.SpawnEnemy(enemyPrefabs[idx]) - 1;
-                }
-                Debug.Log(i);
-            }
-
-            enemiesSpawned = true;
+            haveEnemiesSpawned = true;
+            StartCoroutine(SpawnEnemies());
         }
     }
 
@@ -98,7 +60,54 @@ public class EnemySpawner : MonoBehaviour
     void EndRound()
     {
         roundActive = false;
-        enemiesSpawned = false;
+        haveEnemiesSpawned = false;
+    }
+
+    IEnumerator SpawnEnemies()
+    {
+        for (int i = 0; i < enemiesPerWave[Mathf.Clamp(threatLevel - 1, 0, enemiesPerWave.Length)]; i++)
+        {
+            EnemySpawnPoint es = spawnPoints[i % spawnPoints.Length];
+
+            // Spawn enemies in the current zone and adjacent ones.
+            if (es.mapZone == player.currentMapZone)
+            {
+                // Choose enemy type
+                // Array order determines chance of selection
+                int idx = 0;
+                if (enemiesPerWave.Length > 1)
+                {
+                    float[] r = new float[enemiesPerWave.Length];
+                    r[0] = 60;
+                    r[1] = 40;
+
+                    // Random 0-100
+                    float roll = Random.Range(0, 100);
+
+                    for (int n = 0; n < r.Length; n++)
+                    {
+                        if (n > 0) r[n] = r[n] / 2;
+
+                        // Calculate selection
+                        roll -= r[n];
+                        if (roll <= 0)
+                        {
+                            idx = n;
+                            Debug.Log(idx);
+                            break;
+                        }
+
+                        if (n + 1 < r.Length - 1) r[n + 1] = r[n];
+                    }
+                }
+
+                es.SpawnEnemy(enemyPrefabs[idx]); // Spawn enemy
+                i += es.SpawnNearby(enemyPrefabs[idx]); // Spawn enemies in nearby zones as well
+            }
+            else continue;
+
+            yield return new WaitForSeconds(enemySpawnGap);
+        }
     }
 
     public void AddTally()
