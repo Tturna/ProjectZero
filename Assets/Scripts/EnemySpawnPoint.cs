@@ -9,11 +9,14 @@ public class EnemySpawnPoint : MonoBehaviour
 
     // Spawn enemy
     // Call nearby spawners to also spawn an enemy
-    public int SpawnEnemy(GameObject enemy)
+    public void SpawnEnemy(GameObject enemy)
     {
-        int spawnedEnemies = 1;
-
         Instantiate(enemy, transform.position, Quaternion.identity);
+    }
+
+    public int SpawnNearby(GameObject enemy)
+    {
+        int spawnedEnemies = 0;
 
         // Find all nearby spawners and spawn enemies
         foreach (EnemySpawnPoint es in FindObjectsOfType<EnemySpawnPoint>())
@@ -32,5 +35,10 @@ public class EnemySpawnPoint : MonoBehaviour
         }
 
         return spawnedEnemies;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.position, 0.5f);
     }
 }

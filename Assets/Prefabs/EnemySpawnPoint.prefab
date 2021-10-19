@@ -43,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce54081c935b2f140bf697a05d74a287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adjacencyRange: 20
+  mapZone: 0

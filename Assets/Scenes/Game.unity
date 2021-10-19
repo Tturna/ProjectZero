@@ -138,13 +138,17 @@ PrefabInstance:
       propertyPath: mapZone
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2584229933264072374, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
+      propertyPath: adjacencyRange
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2584229933264072375, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: m_RootOrder
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2584229933264072375, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.19
+      value: -15.27
       objectReference: {fileID: 0}
     - target: {fileID: 2584229933264072375, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1134,7 +1138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 11400000, guid: c3fd2d696bc48da479565b05a7f916a5, type: 2}
-  - {fileID: 11400000, guid: 4386edee9ba511b4f92efd96cc3425a3, type: 2}
+  - {fileID: 0}
   showDebug: 0
 --- !u!1 &715435666
 GameObject:
@@ -2124,6 +2128,10 @@ PrefabInstance:
       propertyPath: mapZone
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2584229933264072374, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
+      propertyPath: adjacencyRange
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2584229933264072375, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -2383,7 +2391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7121507479394449355, guid: 9628c316df5b54341822574063a5d2f8, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2548,6 +2556,10 @@ PrefabInstance:
     - target: {fileID: 2584229933264072374, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: mapZone
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584229933264072374, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
+      propertyPath: adjacencyRange
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2584229933264072375, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: m_RootOrder
@@ -3764,7 +3776,7 @@ MonoBehaviour:
   staminaRegenDelay: 2
   staminaRegenAmount: 0.25
   currency: 0
-  lockerKeys: 0
+  lockerKeys: 1
   currentMapZone: 0
   animator: {fileID: 1429976900}
   runParticlesPrefab: {fileID: 568571566281539103, guid: ec3c37658af5299418571616d5cd53cc, type: 3}
@@ -4330,7 +4342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2130994533
 Transform:
   m_ObjectHideFlags: 0
@@ -4359,6 +4371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   threatLevel: 0
   roundGap: 10
+  enemySpawnGap: 2
   enemiesPerWave: 05000000080000000f0000001400000019000000
   enemyPrefabs:
   - {fileID: 8680668496869847606, guid: 76a98215803ff8647b3f05f50527f946, type: 3}
@@ -4377,6 +4390,10 @@ PrefabInstance:
     - target: {fileID: 2584229933264072374, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: mapZone
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584229933264072374, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
+      propertyPath: adjacencyRange
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2584229933264072375, guid: 3ceb7809930c2674ea1d6fe165070e88, type: 3}
       propertyPath: m_RootOrder
