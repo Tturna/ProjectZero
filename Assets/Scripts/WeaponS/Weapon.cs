@@ -43,7 +43,7 @@ public class Weapon : MonoBehaviour
     {
         // Define variables
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
         hud = FindObjectOfType<HUD>();
 
         for (int i = 0; i < weapons.Length; i++)

@@ -15,6 +15,8 @@ public class WeaponScriptableObject : ScriptableObject
     public GameObject muzzleFlashPrefab;
     public Color projectileColor;
     public Color muzzleFlashColor;
+    public bool isTwoHanded;
+    public Vector2[] handPositions = new Vector2[2];
     public AnimatorOverrideController animationController;
     public AudioClip attackSound;
 }

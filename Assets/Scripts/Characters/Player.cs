@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     // Weapon
     [SerializeField] private Transform weaponAnchor;
     [SerializeField] private GameObject weaponObject;
+    [SerializeField] private GameObject[] hands;
     private SpriteRenderer weaponRenderer;
     private Weapon weapon;
     
@@ -99,6 +100,23 @@ public class Player : MonoBehaviour
 
         // Flip the weapon on the Y axis when aiming left
         weaponRenderer.flipY = lookingLeft;
+
+        Vector2[] defHandPositions = weapon.currentWeapon.weaponSO.handPositions;
+
+        // Flip the hand y positions when looking left
+        for (int i = 0; i < hands.Length; i++)
+        {
+            // If the gun is one handed, set both hands in the same position
+            if (i > 0 && !weapon.currentWeapon.weaponSO.isTwoHanded)
+            {
+                hands[i].transform.localPosition = hands[i - 1].transform.localPosition;
+                break;
+            }
+
+            Vector2 pos = defHandPositions[i];
+            if (lookingLeft) pos.y *= -1;
+            hands[i].transform.localPosition = pos;
+        }
 
         // Shooting (using a Line Renderer for monitoring)
         if (Input.GetMouseButtonDown(0))

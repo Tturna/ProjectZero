@@ -75,9 +75,9 @@ public class EnemySpawner : MonoBehaviour
                 // Choose enemy type
                 // Array order determines chance of selection
                 int idx = 0;
-                if (enemiesPerWave.Length > 1)
+                if (enemyPrefabs.Length > 1)
                 {
-                    float[] r = new float[enemiesPerWave.Length];
+                    float[] r = new float[enemyPrefabs.Length];
                     r[0] = 60;
                     r[1] = 40;
 

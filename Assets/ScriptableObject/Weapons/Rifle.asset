@@ -24,5 +24,9 @@ MonoBehaviour:
   muzzleFlashPrefab: {fileID: 1318200099686788851, guid: d9328145b6c4504428db22973dc5125a, type: 3}
   projectileColor: {r: 1, g: 0.30589086, b: 0, a: 1}
   muzzleFlashColor: {r: 1, g: 0.3, b: 0, a: 1}
+  isTwoHanded: 1
+  handPositions:
+  - {x: -0.25, y: -0.2}
+  - {x: 0.38, y: -0.05}
   animationController: {fileID: 22100000, guid: ea537b9e2bbae5f4c80d0af3cbe0499a, type: 2}
   attackSound: {fileID: 0}
