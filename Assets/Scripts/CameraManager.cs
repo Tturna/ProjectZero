@@ -6,6 +6,11 @@ public class CameraManager : MonoBehaviour
 {
     private GameObject playerObject;
 
+    // Shake
+    bool isShaking;
+    float shakeTimer;
+    float shakeStrength;
+
     private void Start()
     {
         playerObject = FindObjectOfType<Player>().gameObject;
@@ -15,8 +20,25 @@ public class CameraManager : MonoBehaviour
     // This is the recommended method by Unity.
     private void LateUpdate()
     {
+        // Calculate shake
+        Vector2 shake = Vector2.zero;
+        if (isShaking)
+        {
+            shake = Random.insideUnitCircle * shakeStrength;
+            shakeTimer -= Time.deltaTime;
+            if (shakeTimer <= 0) isShaking = false;
+        }
+
         // Make the camera follow the player
         // Add a z-axis offset to the position so the camera's near clip plane doesn't devour the whole scene
-        transform.position = playerObject.transform.position + Vector3.back;
+        // Add shake
+        transform.position = playerObject.transform.position + Vector3.back + (Vector3)shake;
+    }
+
+    public void Shake(float duration, float strength)
+    {
+        shakeTimer = duration;
+        shakeStrength = strength;
+        isShaking = true;
     }
 }

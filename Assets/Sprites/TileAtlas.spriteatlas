@@ -32,7 +32,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: 3d432301ea75bcc42af59ef34d1c88e0, type: 3}
-    totalSpriteSurfaceArea: 3840
+    totalSpriteSurfaceArea: 4352
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -48,7 +48,9 @@ SpriteAtlas:
   - {fileID: 4099902767569298868, guid: 3d432301ea75bcc42af59ef34d1c88e0, type: 3}
   - {fileID: 3825752689756085014, guid: 3d432301ea75bcc42af59ef34d1c88e0, type: 3}
   - {fileID: 857779327251732012, guid: 3d432301ea75bcc42af59ef34d1c88e0, type: 3}
+  - {fileID: 8933607801220796041, guid: 3d432301ea75bcc42af59ef34d1c88e0, type: 3}
   - {fileID: -6765242926017629268, guid: 3d432301ea75bcc42af59ef34d1c88e0, type: 3}
+  - {fileID: -8637159173488095169, guid: 3d432301ea75bcc42af59ef34d1c88e0, type: 3}
   - {fileID: -47299315171432025, guid: 3d432301ea75bcc42af59ef34d1c88e0, type: 3}
   - {fileID: 9045646400296435942, guid: 3d432301ea75bcc42af59ef34d1c88e0, type: 3}
   - {fileID: 7477827516038983822, guid: 3d432301ea75bcc42af59ef34d1c88e0, type: 3}
@@ -64,7 +66,9 @@ SpriteAtlas:
   - Tiles_4
   - Tiles_9
   - Tiles_8
+  - Tiles_16
   - Tiles_14
+  - Tiles_15
   - Tiles_12
   - Tiles_13
   - Tiles_10

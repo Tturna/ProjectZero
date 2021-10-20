@@ -10,9 +10,12 @@ public class HUD : MonoBehaviour
     [SerializeField] private Text ammo;
     [SerializeField] private Image[] weaponSlots;
     [SerializeField, Tooltip("Weapon Images")] private Image[] weapons;
+    [SerializeField] private GameObject lockerKeyPrefab;
 
     private Color inactiveGunColor = new Color(1f, 1f, 1f, .5f);
     private Color activeGunColor = Color.white;
+
+    GameObject[] lockerKeyIcons;
 
     bool lateUpdate;
 
@@ -83,6 +86,30 @@ public class HUD : MonoBehaviour
         {
             if (i == index) weapons[i].color = activeGunColor;
             else if (weapons[i].sprite) weapons[i].color = inactiveGunColor;
+        }
+    }
+
+    public void UpdateLockerKeysUI(int amount)
+    {
+        if (lockerKeyIcons != null)
+        {
+            // Skip updating if already correct
+            if (lockerKeyIcons.Length == amount) return;
+
+            // Destroy old icons
+            foreach (GameObject g in lockerKeyIcons) Destroy(g);
+        }
+
+        // TODO: Smarter method because removing stuff and adding the same things back is cringe
+
+
+        // Create new icons
+        lockerKeyIcons = new GameObject[amount];
+
+        for (int i = 0; i < amount; i++)
+        {
+            lockerKeyIcons[i] = Instantiate(lockerKeyPrefab, transform);
+            lockerKeyIcons[i].GetComponent<RectTransform>().anchoredPosition = new Vector3(50 + (35 * i), 130, 0);
         }
     }
 }

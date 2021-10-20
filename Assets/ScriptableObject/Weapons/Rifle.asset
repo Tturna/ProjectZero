@@ -17,6 +17,8 @@ MonoBehaviour:
   ammoCapacity: 30
   defaultReserveAmmo: 120
   projectileSpeed: 100
+  cameraShakeTime: 0.05
+  cameraShakeMultiplier: 0.075
   muzzleFlashLifetime: 0.1
   muzzlePoint: {x: 0.9, y: 0.05}
   sprite: {fileID: 675874028361584279, guid: 9628c316df5b54341822574063a5d2f8, type: 3}
