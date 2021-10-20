@@ -27,6 +27,8 @@ public class Weapon : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private HUD hud;
+    [SerializeField] GameObject ejectedCasingFX;
+    CameraManager cam;
 
     // Weapons
     [SerializeField] private WeaponScriptableObject[] weapons;
@@ -45,6 +47,7 @@ public class Weapon : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponent<Animator>();
         hud = FindObjectOfType<HUD>();
+        cam = FindObjectOfType<CameraManager>();
 
         for (int i = 0; i < weapons.Length; i++)
         {
@@ -131,8 +134,10 @@ public class Weapon : MonoBehaviour
 
     // Give the player a weapon.
     // Add it to a free slot. If there is not free slot, replace the current weapon
-    public void AddWeapon(WeaponStats weapon)
+    public WeaponStats AddWeapon(WeaponStats weapon)
     {
+        WeaponStats oldWeapon;
+
         // Check if there is an empty slot and if so, place the weapon there
         for (int i = 0; i < weaponStats.Length; i++)
         {
@@ -140,14 +145,17 @@ public class Weapon : MonoBehaviour
             {
                 weaponStats[i] = weapon;
                 hud.UpdateWeaponUI(i, weaponStats[i].weaponSO.sprite);
-                return;
+                return null;
             }
         }
 
         // If no empty slot is found, replace the current weapon
+        oldWeapon = weaponStats[selectedSlotIdx];
         weaponStats[selectedSlotIdx] = weapon;
         hud.UpdateWeaponUIPositions();
         UpdateSelectedWeapon();
+
+        return oldWeapon;
     }
 
     // Reduce ammo from the current weapon
@@ -177,7 +185,7 @@ public class Weapon : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(startPoint, target - startPoint);
 
         // Get collision point or if there was no collision, get a point far in the direction of the target
-        Vector2 hitPoint = Vector2.zero;
+        Vector2 hitPoint;
         float shotLength = 50f;
         if (hit)
         {
@@ -192,10 +200,6 @@ public class Weapon : MonoBehaviour
                 // Damage the enemy
                 hit.transform.GetComponent<Enemy>().ReceiveDamage(so.damage, transform.root.gameObject);
             }
-        }
-        else
-        {
-            hitPoint = (target - startPoint) * 100;
         }
 
         // Reduce ammo and update the ammo UI
@@ -235,6 +239,22 @@ public class Weapon : MonoBehaviour
 
         // Play weapon animation
         animator.SetTrigger("attack");
+
+        // Eject casing
+        // TODO: Smarter system. Doesn't really make sense to spawn an object with a particle system that emits 1 particle
+        GameObject ecfx = Instantiate(ejectedCasingFX, transform.position, Quaternion.identity);
+        ecfx.GetComponent<ParticleSystem>().Emit(1);
+        StartCoroutine(SetCasingFXLayerOrder(ecfx, 0, 0.5f));
+
+        // Camera shake
+        cam.Shake(currentWeapon.weaponSO.cameraShakeTime, currentWeapon.weaponSO.cameraShakeMultiplier);
+    }
+
+    IEnumerator SetCasingFXLayerOrder(GameObject particleSystem, int orderInLayer, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ParticleSystemRenderer ren = particleSystem.GetComponent<ParticleSystemRenderer>();
+        ren.sortingOrder = orderInLayer;
     }
 
     private IEnumerator DelayDestroyObject(GameObject target, float delay)

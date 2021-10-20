@@ -8,6 +8,8 @@ public class WeaponScriptableObject : ScriptableObject
     public int ammoCapacity;
     public int defaultReserveAmmo;
     public float projectileSpeed;
+    public float cameraShakeTime;
+    public float cameraShakeMultiplier;
     public float muzzleFlashLifetime;
     public Vector2 muzzlePoint;
     public Sprite sprite;

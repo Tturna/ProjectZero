@@ -49,6 +49,9 @@ public class Player : MonoBehaviour
         playerBody = GetComponent<Rigidbody2D>();
         weapon = GetComponentInChildren<Weapon>();
         weaponRenderer = weaponObject.GetComponentInChildren<SpriteRenderer>();
+
+        // Update HUD stuff
+        hud.UpdateLockerKeysUI(lockerKeys);
     }
 
     void Update()
@@ -235,6 +238,12 @@ public class Player : MonoBehaviour
     {
         currency += amount;
         hud.UpdateScoreUI(currency);
+    }
+
+    // Update stuff like locker keys to the HUD
+    public void UpdateValues()
+    {
+        hud.UpdateLockerKeysUI(lockerKeys);
     }
 
     private void Death()
