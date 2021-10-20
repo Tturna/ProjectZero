@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1614ee059ad8474b8d72e6751dacdee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ejectedCasingFX: {fileID: 3924957150000001703, guid: 6decb23b2be9d2d49b4b1d0c37eaab5e, type: 3}
+  ejectedCasingFX: {fileID: 3924957150000001697, guid: 6decb23b2be9d2d49b4b1d0c37eaab5e, type: 3}
   weapons:
   - {fileID: 11400000, guid: c3fd2d696bc48da479565b05a7f916a5, type: 2}
   - {fileID: 11400000, guid: 4386edee9ba511b4f92efd96cc3425a3, type: 2}
@@ -2441,7 +2441,7 @@ Canvas:
   m_GameObject: {fileID: 1080663037}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 192026000}
   m_PlaneDistance: 1
   m_PixelPerfect: 0
