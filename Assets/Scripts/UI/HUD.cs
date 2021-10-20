@@ -45,10 +45,10 @@ public class HUD : MonoBehaviour
         }
     }
 
-    public void UpdateStaminaUI(float value)
-    {
-        staminaBar.fillAmount = value;
-    }
+    //public void UpdateStaminaUI(float value)
+    //{
+    //    staminaBar.fillAmount = value;
+    //}
 
     public void UpdateHealthUI(float value)
     {
@@ -109,7 +109,7 @@ public class HUD : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             lockerKeyIcons[i] = Instantiate(lockerKeyPrefab, transform);
-            lockerKeyIcons[i].GetComponent<RectTransform>().anchoredPosition = new Vector3(50 + (35 * i), 130, 0);
+            lockerKeyIcons[i].GetComponent<RectTransform>().anchoredPosition = new Vector3(50 + (60 * i), 130, 0);
         }
     }
 }

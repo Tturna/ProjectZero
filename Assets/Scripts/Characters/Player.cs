@@ -121,14 +121,21 @@ public class Player : MonoBehaviour
             hands[i].transform.localPosition = pos;
         }
 
-        // Shooting (using a Line Renderer for monitoring)
-        if (Input.GetMouseButtonDown(0))
+        // Shooting
+        if (!sprinting && Input.GetMouseButtonDown(0))
         {
             // Fire
-            weapon.Shoot(mousePos);
-            hud.UpdateAmmoUI(weapon.currentWeapon.weaponAmmo, weapon.currentWeapon.reserveAmmo);
+            if (weapon.Shoot(mousePos))
+                hud.UpdateAmmoUI(weapon.currentWeapon.weaponAmmo, weapon.currentWeapon.reserveAmmo);
         }
-        else if (Input.GetKeyDown(KeyCode.R))
+        else if (!sprinting && weapon.currentWeapon.weaponSO.isAutomatic && Input.GetMouseButton(0))
+        {
+            // Fire automatic
+            if (weapon.Shoot(mousePos))
+                hud.UpdateAmmoUI(weapon.currentWeapon.weaponAmmo, weapon.currentWeapon.reserveAmmo);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
         {
             // Reload
             weapon.ReloadCurrentWeapon();
@@ -147,22 +154,21 @@ public class Player : MonoBehaviour
             // Changes movement speed when holding the sprint key
             float multiplier = 1f;
 
-            // Prevent sprinting if out of energy
-            if (sprinting && stats.energy > 0f)
+            if (sprinting/* && stats.energy > 0f*/)
             {
                 // Reduce energy when sprinting
                 multiplier = sprintMultiplier;
-                stats.energy = Mathf.Clamp(stats.energy - sprintCost, 0f, stats.maxEnergy);
+                //stats.energy = Mathf.Clamp(stats.energy - sprintCost, 0f, stats.maxEnergy);
 
                 // Update stamina bar UI
-                hud.UpdateStaminaUI(stats.energy / stats.maxEnergy);
+                //hud.UpdateStaminaUI(stats.energy / stats.maxEnergy);
             }
-            else if (sprinting && stats.energy == 0f)
-            {
-                // If the player runs out of energy, start a delay after which it will regenerate
-                sprinting = false;
-                StartCoroutine(StartStaminaRegeneration(staminaRegenDelay));
-            }
+            //else if (sprinting && stats.energy == 0f)
+            //{
+            //    // If the player runs out of energy, start a delay after which it will regenerate
+            //    sprinting = false;
+            //    StartCoroutine(StartStaminaRegeneration(staminaRegenDelay));
+            //}
 
             playerBody.AddForce(moveDir.normalized * stats.movementSpeed * multiplier);
 
@@ -187,17 +193,17 @@ public class Player : MonoBehaviour
         // Alternatively, we could do this in Update() and multiply everything with Time.deltaTime, but I don't think it makes a difference.
 
         // Stamina regeneration
-        if (regeneratingStamina)
-        {
-            if (stats.energy < stats.maxEnergy)
-            {
-                stats.energy = Mathf.Clamp(stats.energy + staminaRegenAmount, 0f, stats.maxEnergy);
+        //if (regeneratingStamina)
+        //{
+        //    if (stats.energy < stats.maxEnergy)
+        //    {
+        //        stats.energy = Mathf.Clamp(stats.energy + staminaRegenAmount, 0f, stats.maxEnergy);
 
-                // Update stamina bar UI
-                hud.UpdateStaminaUI(stats.energy / stats.maxEnergy);
-            }
-            else regeneratingStamina = false;
-        }
+        //        // Update stamina bar UI
+        //        hud.UpdateStaminaUI(stats.energy / stats.maxEnergy);
+        //    }
+        //    else regeneratingStamina = false;
+        //}
 
         // Update player animations when moving and not moving
         animator.SetBool("walking", moveDir.magnitude > 0f);

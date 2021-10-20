@@ -19,6 +19,7 @@ MonoBehaviour:
   projectileSpeed: 100
   cameraShakeTime: 0.05
   cameraShakeMultiplier: 0.075
+  useTime: 0.1
   muzzleFlashLifetime: 0.1
   muzzlePoint: {x: 0.9, y: 0.05}
   sprite: {fileID: 675874028361584279, guid: 9628c316df5b54341822574063a5d2f8, type: 3}
@@ -27,6 +28,7 @@ MonoBehaviour:
   projectileColor: {r: 1, g: 0.30589086, b: 0, a: 1}
   muzzleFlashColor: {r: 1, g: 0.3, b: 0, a: 1}
   isTwoHanded: 1
+  isAutomatic: 1
   handPositions:
   - {x: -0.25, y: -0.2}
   - {x: 0.38, y: -0.05}

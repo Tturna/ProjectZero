@@ -34,6 +34,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private WeaponScriptableObject[] weapons;
     private WeaponStats[] weaponStats = new WeaponStats[2];
     public WeaponStats currentWeapon;
+    bool canShoot = true;
 
     // Slot selection
     private int selectedSlotIdx;
@@ -172,10 +173,13 @@ public class Weapon : MonoBehaviour
         currentWeapon.reserveAmmo -= currentWeapon.weaponAmmo; // Subtract loaded ammo from the reserve
     }
 
-    public void Shoot(Vector2 target)
+    public bool Shoot(Vector2 target)
     {
+        // Check if can shoot
+        if (!canShoot) return false;
+
         // Check if out of ammo
-        if (currentWeapon.weaponAmmo <= 0) return;
+        if (currentWeapon.weaponAmmo <= 0) return false;
 
         WeaponScriptableObject so = currentWeapon.weaponSO;
 
@@ -248,6 +252,18 @@ public class Weapon : MonoBehaviour
 
         // Camera shake
         cam.Shake(currentWeapon.weaponSO.cameraShakeTime, currentWeapon.weaponSO.cameraShakeMultiplier);
+
+        // Prevent shooting until usetime has passed
+        canShoot = false;
+        StartCoroutine(WaitWeaponUseTime(currentWeapon.weaponSO.useTime));
+
+        return true;
+    }
+
+    IEnumerator WaitWeaponUseTime(float useTime)
+    {
+        yield return new WaitForSeconds(useTime);
+        canShoot = true;
     }
 
     IEnumerator SetCasingFXLayerOrder(GameObject particleSystem, int orderInLayer, float delay)

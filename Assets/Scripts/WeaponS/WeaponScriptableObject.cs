@@ -10,6 +10,7 @@ public class WeaponScriptableObject : ScriptableObject
     public float projectileSpeed;
     public float cameraShakeTime;
     public float cameraShakeMultiplier;
+    public float useTime;
     public float muzzleFlashLifetime;
     public Vector2 muzzlePoint;
     public Sprite sprite;
@@ -18,6 +19,7 @@ public class WeaponScriptableObject : ScriptableObject
     public Color projectileColor;
     public Color muzzleFlashColor;
     public bool isTwoHanded;
+    public bool isAutomatic;
     public Vector2[] handPositions = new Vector2[2];
     public AnimatorOverrideController animationController;
     public AudioClip attackSound;
