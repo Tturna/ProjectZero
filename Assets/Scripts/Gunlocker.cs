@@ -16,20 +16,19 @@ public class Gunlocker : MonoBehaviour
 
     // General
     Player player;
-    MeshRenderer promptRenderer;
+    [SerializeField] SpriteRenderer promptRenderer;
     SpriteRenderer gunRenderer;
 
     void Start()
     {
         // Initializing variables
-        promptRenderer = GetComponentInChildren<MeshRenderer>();
         promptRenderer.enabled = false;
         ammo = weaponSO.ammoCapacity;
         reserveAmmo = weaponSO.defaultReserveAmmo;
 
         // Find gun renderer
         SpriteRenderer[] srs = GetComponentsInChildren<SpriteRenderer>();
-        foreach (SpriteRenderer sr in srs) { if (sr.gameObject != gameObject) { gunRenderer = sr; break; } }
+        foreach (SpriteRenderer sr in srs) { if (sr.gameObject.name == "Gun") { gunRenderer = sr; break; } }
         gunRenderer.sprite = weaponSO.sprite;
 
         // Subscribe to events
@@ -48,7 +47,7 @@ public class Gunlocker : MonoBehaviour
             {
                 OpenLocker();
             }
-            else if (canGetGun)
+            else if (canOpen && canGetGun)
             {
                 GetGun();
             }
@@ -102,8 +101,11 @@ public class Gunlocker : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        promptRenderer.enabled = true;
         canGetGun = true;
+        if (canOpen)
+        {
+            promptRenderer.enabled = true;
+        }
     }
 
     void OnEnterNearLocker(GameObject locker)

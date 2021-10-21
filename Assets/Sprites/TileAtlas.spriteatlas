@@ -30,14 +30,53 @@ SpriteAtlas:
       enableTightPacking: 1
     secondaryTextureSettings: {}
     variantMultiplier: 1
-    packables: []
-    totalSpriteSurfaceArea: 0
+    packables:
+    - {fileID: 2800000, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+    totalSpriteSurfaceArea: 4864
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
-  m_PackedSprites: []
-  m_PackedSpriteNamesToIndex: []
+  m_PackedSprites:
+  - {fileID: 5642316985700963786, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: 1587875307362972163, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: 7089924522258091664, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: 6047210117253402842, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: -6430088509506615375, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: -7535692958698783795, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: -12817535463791957, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: 1038358654918522561, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: -7154921180747005743, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: -1418671082347619987, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: 2248132177344951783, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: 4289190795450695623, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: -2983318336086371100, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: 3870916269068497902, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: -848258772917233076, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: -3303581043761179488, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: -8981929496736458924, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: 4559066296548474814, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  - {fileID: -6370091408572617057, guid: 769332d198ba28840959621b50b4dc50, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - tiles-1_5
+  - tiles-1_4
+  - tiles-1_7
+  - tiles-1_6
+  - tiles-1_1
+  - tiles-1_0
+  - tiles-1_3
+  - tiles-1_2
+  - tiles-1_9
+  - tiles-1_8
+  - tiles-1_18
+  - tiles-1_14
+  - tiles-1_15
+  - tiles-1_16
+  - tiles-1_17
+  - tiles-1_10
+  - tiles-1_11
+  - tiles-1_12
+  - tiles-1_13
   m_RenderDataMap: {}
   m_Tag: TileAtlas
   m_IsVariant: 0
