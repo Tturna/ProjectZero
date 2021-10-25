@@ -22,7 +22,7 @@ MonoBehaviour:
   useTime: 0.25
   muzzleFlashLifetime: 0.1
   muzzlePoint: {x: 0.65, y: 0.05}
-  sprite: {fileID: 21300000, guid: 489e52ac4df464a4181d66cb1e0e2fcb, type: 3}
+  sprite: {fileID: -4525064436962881543, guid: 489e52ac4df464a4181d66cb1e0e2fcb, type: 3}
   projectilePrefab: {fileID: 4623133005855197690, guid: 266a4a2a56f08d0449107e8aa748765b, type: 3}
   muzzleFlashPrefab: {fileID: 1318200099686788851, guid: d9328145b6c4504428db22973dc5125a, type: 3}
   projectileColor: {r: 1, g: 0.73333335, b: 0, a: 1}

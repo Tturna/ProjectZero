@@ -1,49 +1,37 @@
 fileFormatVersion: 2
-guid: e26fe61bcaebae04db1da0827a18e4b0
+guid: 5fefa254e2bbd6b4cbd5d62a46af3787
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3615900723022076319
-    second: Locker_0
+      213: 701244173164573688
+    second: StorageUnits_0
   - first:
-      213: -660011976924896280
-    second: Locker_1
+      213: 6719666232538301755
+    second: StorageUnits_1
   - first:
-      213: -1217191454571152441
-    second: Locker_2
+      213: 6581337622579825973
+    second: StorageUnits_2
   - first:
-      213: -5376887234008133961
-    second: Locker_3
+      213: -6772919769484538460
+    second: StorageUnits_3
   - first:
-      213: 717553781682522259
-    second: Locker_4
+      213: -87956154949338910
+    second: StorageUnits_4
   - first:
-      213: 2220398012953866575
-    second: Locker_5
+      213: -4437245936303717859
+    second: StorageUnits_5
   - first:
-      213: -5620299562416381527
-    second: Locker_6
+      213: -2999450806526049985
+    second: StorageUnits_6
   - first:
-      213: -507601768594642904
-    second: Locker_7
+      213: 3759013111963722173
+    second: StorageUnits_7
   - first:
-      213: -3425092000200999072
-    second: Locker_8
+      213: -5926172632718654333
+    second: StorageUnits_8
   - first:
-      213: -2876804403685580291
-    second: Locker_9
-  - first:
-      213: -3305604337142490496
-    second: Locker_10
-  - first:
-      213: 4907955414835651387
-    second: Locker_11
-  - first:
-      213: -4165513166298771579
-    second: Locker_12
-  - first:
-      213: 6114110063656521309
-    second: Locker_13
+      213: 7626083063607268107
+    second: StorageUnits_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -90,7 +78,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -145,13 +133,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Locker_0
+      name: StorageUnits_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 29
-        height: 47
+        width: 25
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f991fcabc824e2230800000000000000
-      internalID: 3615900723022076319
+      spriteID: 8f379423cd15bb900800000000000000
+      internalID: 701244173164573688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Locker_1
+      name: StorageUnits_1
       rect:
         serializedVersion: 2
-        x: 29
+        x: 25
         y: 0
-        width: 29
-        height: 47
+        width: 25
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e363e79a9a27d6f0800000000000000
-      internalID: -660011976924896280
+      spriteID: b3502af06dc014d50800000000000000
+      internalID: 6719666232538301755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Locker_2
+      name: StorageUnits_2
       rect:
         serializedVersion: 2
-        x: 58
+        x: 50
         y: 0
-        width: 29
-        height: 47
+        width: 25
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,20 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cb35ae22daab1fe0800000000000000
-      internalID: -1217191454571152441
+      spriteID: 53dc8c4c2bb955b50800000000000000
+      internalID: 6581337622579825973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Locker_3
+      name: StorageUnits_3
       rect:
         serializedVersion: 2
-        x: 87
+        x: 75
         y: 0
-        width: 29
-        height: 47
+        width: 25
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +210,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7becc937c857165b0800000000000000
-      internalID: -5376887234008133961
+      spriteID: 4ad47a7aa51c102a0800000000000000
+      internalID: -6772919769484538460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Locker_4
+      name: StorageUnits_4
       rect:
         serializedVersion: 2
-        x: 116
+        x: 100
         y: 0
-        width: 29
-        height: 47
+        width: 25
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 398cc68dc5345f900800000000000000
-      internalID: 717553781682522259
+      spriteID: 2e87f64d75487cef0800000000000000
+      internalID: -87956154949338910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Locker_5
+      name: StorageUnits_5
       rect:
         serializedVersion: 2
-        x: 145
+        x: 125
         y: 0
-        width: 29
-        height: 47
+        width: 25
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,20 +252,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4139168a3070de10800000000000000
-      internalID: 2220398012953866575
+      spriteID: d124299945cbb62c0800000000000000
+      internalID: -4437245936303717859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Locker_6
+      name: StorageUnits_6
       rect:
         serializedVersion: 2
-        x: 174
+        x: 150
         y: 0
-        width: 29
-        height: 47
+        width: 25
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,20 +273,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a163ea535fa002b0800000000000000
-      internalID: -5620299562416381527
+      spriteID: f3181cb126fcf56d0800000000000000
+      internalID: -2999450806526049985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Locker_7
+      name: StorageUnits_7
       rect:
         serializedVersion: 2
-        x: 203
+        x: 175
         y: 0
-        width: 29
-        height: 47
+        width: 25
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,20 +294,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8286e8f71e2a4f8f0800000000000000
-      internalID: -507601768594642904
+      spriteID: db122ac5282ba2430800000000000000
+      internalID: 3759013111963722173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Locker_8
+      name: StorageUnits_8
       rect:
         serializedVersion: 2
-        x: 232
+        x: 200
         y: 0
-        width: 29
-        height: 47
+        width: 25
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,20 +315,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06fbcf409f0a770d0800000000000000
-      internalID: -3425092000200999072
+      spriteID: 384c925836102cda0800000000000000
+      internalID: -5926172632718654333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Locker_9
+      name: StorageUnits_9
       rect:
         serializedVersion: 2
-        x: 261
+        x: 225
         y: 0
-        width: 29
-        height: 47
+        width: 25
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -348,92 +336,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df1aa0603a98318d0800000000000000
-      internalID: -2876804403685580291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Locker_10
-      rect:
-        serializedVersion: 2
-        x: 290
-        y: 0
-        width: 29
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08a91a48e522022d0800000000000000
-      internalID: -3305604337142490496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Locker_11
-      rect:
-        serializedVersion: 2
-        x: 319
-        y: 0
-        width: 29
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b33ebb2427f8c1440800000000000000
-      internalID: 4907955414835651387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Locker_12
-      rect:
-        serializedVersion: 2
-        x: 348
-        y: 0
-        width: 29
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58f8c8758df1136c0800000000000000
-      internalID: -4165513166298771579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Locker_13
-      rect:
-        serializedVersion: 2
-        x: 377
-        y: 0
-        width: 29
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d5e43ed75bea9d450800000000000000
-      internalID: 6114110063656521309
+      spriteID: b031fe1442a45d960800000000000000
+      internalID: 7626083063607268107
       vertices: []
       indices: 
       edges: []
