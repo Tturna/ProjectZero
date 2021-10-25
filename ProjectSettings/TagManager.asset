@@ -45,3 +45,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Level
+    uniqueID: 3766713237
+    locked: 0
+  - name: Base
+    uniqueID: 889473575
+    locked: 0
+  - name: LevelOverlay
+    uniqueID: 3684904487
+    locked: 0
