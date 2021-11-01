@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour
     private EnemySpawner enemySpawner;
 
     // Specific stats
-    [SerializeField] private int scorePrize; // How much points the player gets from this enemy
+    [SerializeField] private int deathPrize; // How much points the player gets from killing this enemy
+    [SerializeField] private int hitPrize; // How much points the player gets from damaging this enemy
 
     // Movement direction calculation
     Vector2 moveDirection = Vector2.zero;
@@ -52,17 +53,23 @@ public class Enemy : MonoBehaviour
         // Reduce health until dead
         stats.health -= amount;
 
-        if (stats.health <= 0f)
+        if (source.tag == "Player")
         {
             // Give the player score for killing this enemy
-            if (source.tag == "Player")
+            if (stats.health <= 0f)
             {
-                source.GetComponent<Player>().AddCurrency(scorePrize);
+                source.GetComponent<Player>().AddCurrency(deathPrize);
+
+                // deth
+                enemySpawner.AddTally();
+                Destroy(gameObject);
+            }
+            // Give the player score for damading this enemy
+            else
+            {
+                source.GetComponent<Player>().AddCurrency(hitPrize);
             }
 
-            // deth
-            enemySpawner.AddTally();
-            Destroy(gameObject);
         }
     }
 

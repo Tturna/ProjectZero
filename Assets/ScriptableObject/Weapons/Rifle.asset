@@ -25,8 +25,8 @@ MonoBehaviour:
   sprite: {fileID: 675874028361584279, guid: 9628c316df5b54341822574063a5d2f8, type: 3}
   projectilePrefab: {fileID: 4623133005855197690, guid: 266a4a2a56f08d0449107e8aa748765b, type: 3}
   muzzleFlashPrefab: {fileID: 1318200099686788851, guid: d9328145b6c4504428db22973dc5125a, type: 3}
-  projectileColor: {r: 1, g: 0.30589086, b: 0, a: 1}
-  muzzleFlashColor: {r: 1, g: 0.3, b: 0, a: 1}
+  projectileColor: {r: 1, g: 0.67145586, b: 0, a: 1}
+  muzzleFlashColor: {r: 1, g: 0.6666667, b: 0, a: 1}
   isTwoHanded: 1
   isAutomatic: 1
   handPositions:

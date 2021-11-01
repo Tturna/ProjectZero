@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   weaponName: pistol
-  damage: 10
+  damage: 20
   ammoCapacity: 12
-  defaultReserveAmmo: 24
+  defaultReserveAmmo: 60
   projectileSpeed: 100
   cameraShakeTime: 0.075
   cameraShakeMultiplier: 0.025
-  useTime: 0.25
+  useTime: 0.175
   muzzleFlashLifetime: 0.1
   muzzlePoint: {x: 0.65, y: 0.05}
   sprite: {fileID: -4525064436962881543, guid: 489e52ac4df464a4181d66cb1e0e2fcb, type: 3}
