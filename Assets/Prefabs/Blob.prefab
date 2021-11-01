@@ -198,7 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f5fe7d2204ed6419cee63d1f9abeaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scorePrize: 100
+  deathPrize: 100
+  hitPrize: 10
 --- !u!114 &8680668496869847603
 MonoBehaviour:
   m_ObjectHideFlags: 0
