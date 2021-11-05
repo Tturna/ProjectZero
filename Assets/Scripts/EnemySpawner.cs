@@ -63,48 +63,58 @@ public class EnemySpawner : MonoBehaviour
         haveEnemiesSpawned = false;
     }
 
-    IEnumerator SpawnEnemies()
+    int GetRandomEnemy()
     {
-        for (int i = 0; i < enemiesPerWave[Mathf.Clamp(threatLevel - 1, 0, enemiesPerWave.Length)]; i++)
+        // Choose enemy type
+        // Array order determines chance of selection
+
+        int idx = 0;
+        if (enemyPrefabs.Length > 1)
         {
-            EnemySpawnPoint es = spawnPoints[i % spawnPoints.Length];
+            float[] r = new float[enemyPrefabs.Length];
+            r[0] = 60;
+            r[1] = 40;
 
-            // Spawn enemies in the current zone and adjacent ones.
-            if (es.mapZone == player.currentMapZone)
+            // Random 0-100
+            float roll = Random.Range(0, 100);
+
+            for (int n = 0; n < r.Length; n++)
             {
-                // Choose enemy type
-                // Array order determines chance of selection
-                int idx = 0;
-                if (enemyPrefabs.Length > 1)
+                if (n > 0) r[n] = r[n] / 2;
+
+                // Calculate selection
+                roll -= r[n];
+                if (roll <= 0)
                 {
-                    float[] r = new float[enemyPrefabs.Length];
-                    r[0] = 60;
-                    r[1] = 40;
-
-                    // Random 0-100
-                    float roll = Random.Range(0, 100);
-
-                    for (int n = 0; n < r.Length; n++)
-                    {
-                        if (n > 0) r[n] = r[n] / 2;
-
-                        // Calculate selection
-                        roll -= r[n];
-                        if (roll <= 0)
-                        {
-                            idx = n;
-                            Debug.Log(idx);
-                            break;
-                        }
-
-                        if (n + 1 < r.Length - 1) r[n + 1] = r[n];
-                    }
+                    idx = n;
+                    //Debug.Log(idx);
+                    break;
                 }
 
-                es.SpawnEnemy(enemyPrefabs[idx]); // Spawn enemy
-                i += es.SpawnNearby(enemyPrefabs[idx]); // Spawn enemies in nearby zones as well
+                if (n + 1 < r.Length - 1) r[n + 1] = r[n];
             }
-            else continue;
+        }
+
+        return idx;
+    }
+
+    IEnumerator SpawnEnemies()
+    {
+        for (int i = 0, sPoint = Random.Range(0, spawnPoints.Length); i < enemiesPerWave[Mathf.Clamp(threatLevel - 1, 0, enemiesPerWave.Length)]; i++)
+        {
+            for (int n = 0; n < spawnPoints.Length; n++)
+            {
+                EnemySpawnPoint es = spawnPoints[(sPoint + n) % spawnPoints.Length];
+
+                // Spawn enemies in the current zone and adjacent ones.
+                if (es.mapZone == player.currentMapZone)
+                {
+                    es.SpawnEnemy(enemyPrefabs[GetRandomEnemy()]); // Spawn enemy
+                    i += es.SpawnNearby(enemyPrefabs[GetRandomEnemy()]); // Spawn enemies in nearby zones as well
+                    sPoint += n + 1;
+                    break;
+                }
+            }
 
             yield return new WaitForSeconds(enemySpawnGap);
         }
