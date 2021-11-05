@@ -385,6 +385,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_Name
       value: Door (11)
@@ -688,6 +692,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_Name
       value: Door (6)
@@ -752,6 +760,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
@@ -1284,6 +1296,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_Name
       value: Door (7)
@@ -1704,6 +1720,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_Name
       value: Door_vertical (9)
@@ -1879,6 +1899,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
@@ -2233,6 +2257,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_Name
       value: Door_vertical (15)
@@ -2299,6 +2327,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_Name
       value: Door_vertical (17)
@@ -2359,6 +2391,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
@@ -2921,6 +2957,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_Name
       value: Door_vertical (5)
@@ -3055,6 +3095,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
@@ -3282,6 +3326,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
@@ -3747,6 +3795,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_Name
       value: Door_vertical (11)
@@ -3956,6 +4008,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
@@ -4257,6 +4313,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
@@ -4868,6 +4928,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
@@ -5849,6 +5913,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_Name
       value: Door_vertical (18)
@@ -6191,6 +6259,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_Name
       value: Door_vertical
@@ -6253,6 +6325,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_Name
       value: Door (4)
@@ -6313,6 +6389,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
@@ -6481,6 +6561,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
@@ -6755,6 +6839,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
@@ -7449,6 +7537,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
@@ -41618,6 +41710,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_Name
       value: Door_vertical (2)
@@ -41678,6 +41774,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
@@ -41817,6 +41917,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_Name
       value: Door_vertical (14)
@@ -41883,6 +41987,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_Name
       value: Door_vertical (8)
@@ -41943,6 +42051,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
@@ -141503,6 +141615,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_Name
       value: Door (8)
@@ -141819,6 +141935,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_Name
       value: Door (5)
@@ -141885,6 +142005,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_Name
       value: Door_vertical (7)
@@ -141945,6 +142069,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
@@ -142299,6 +142427,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_Name
       value: Door_vertical (16)
@@ -142614,6 +142746,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_Name
       value: Door_vertical (10)
@@ -142920,6 +143056,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
+      propertyPath: openCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: b16ca66d67e33654886ad23eb8ff85d5, type: 3}
       propertyPath: m_Name
       value: Door_vertical (12)
@@ -143078,6 +143218,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
@@ -144435,6 +144579,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168871, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545416127298168888, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}
+      propertyPath: openCost
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5545416127298168889, guid: 4c1ec333801d50b4495a4c9a6e51fcd3, type: 3}

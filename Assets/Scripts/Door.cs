@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
     private bool canOpen;
     [SerializeField] private bool isOpen;
     [SerializeField] private int openCost;
+    [SerializeField] List<int> adjacentZones = new List<int>();
 
     Player player;
     SpriteRenderer promptRenderer;
@@ -55,11 +56,21 @@ public class Door : MonoBehaviour
         promptRenderer.enabled = false;
 
         // Play animation
-        Animator anim = GetComponent<Animator>();
+        Animator anim = GetComponentInChildren<Animator>();
         anim.SetTrigger("open");
 
         // Disable collider after animation
         StartCoroutine(DisableCollider(2));
+
+        // Add adjacent zones to unlocked zones in the game manager
+        // This allows enemies to spawn there
+        foreach (int zone in adjacentZones)
+        {
+            if (!GameManager.unlockedZones.Contains(zone))
+            {
+                GameManager.unlockedZones.Add(zone);
+            }
+        }
     }
 
     IEnumerator DisableCollider(float delay)
@@ -85,5 +96,29 @@ public class Door : MonoBehaviour
 
         canOpen = false;
         promptRenderer.enabled = false;
+    }
+
+    IEnumerator DisableRigidbody(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.bodyType = RigidbodyType2D.Static;
+        rb.sleepMode = RigidbodySleepMode2D.StartAsleep;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Find adjacent zones and "disable" rigidbody
+        if (collision.gameObject.tag == "Zone")
+        {
+            if (adjacentZones.Count == 0)
+            {
+                StartCoroutine(DisableRigidbody(1f));
+            }
+
+            int index = collision.gameObject.GetComponent<MapZone>().zoneIndex;
+
+            if (!adjacentZones.Contains(index)) adjacentZones.Add(index);
+        }
     }
 }
