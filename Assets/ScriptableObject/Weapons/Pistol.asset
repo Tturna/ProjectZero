@@ -18,7 +18,7 @@ MonoBehaviour:
   defaultReserveAmmo: 60
   projectileSpeed: 100
   cameraShakeTime: 0.075
-  cameraShakeMultiplier: 0.025
+  cameraShakeMultiplier: 0.05
   useTime: 0.175
   muzzleFlashLifetime: 0.1
   muzzlePoint: {x: 0.65, y: 0.05}

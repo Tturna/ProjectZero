@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     // Specific stats
     [SerializeField] private int deathPrize; // How much points the player gets from killing this enemy
     [SerializeField] private int hitPrize; // How much points the player gets from damaging this enemy
+    [SerializeField] float hitStretchHorizontal;
+    [SerializeField] float hitStretchVertical;
 
     // Movement direction calculation
     Vector2 moveDirection = Vector2.zero;
@@ -69,8 +71,25 @@ public class Enemy : MonoBehaviour
             {
                 source.GetComponent<Player>().AddCurrency(hitPrize);
             }
-
         }
+
+        // Squish and stretch
+        spriteRenderer.transform.localScale += new Vector3(hitStretchHorizontal, hitStretchVertical, 0f);
+        StartCoroutine(SquishAndStretch());
+    }
+
+    IEnumerator SquishAndStretch()
+    {
+        float t = 0;
+        while (spriteRenderer.transform.localScale != Vector3.one)
+        {
+            spriteRenderer.transform.localScale = Vector3.Lerp(spriteRenderer.transform.localScale, Vector3.one, t);
+            t += Time.deltaTime;
+            if (t > 1f) t = 1f;
+
+            yield return new WaitForEndOfFrame();
+        }
+        
     }
 
     // IEnumerator for implementing an attack delay between hits
